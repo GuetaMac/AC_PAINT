@@ -48,13 +48,13 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 }
 .welcome-left {}
 .welcome-title {
-    font-size: 30px; /* was 26px */
+    font-size: 30px;
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.3px;
 }
 .welcome-sub {
-    font-size: 17px; /* was 15px */
+    font-size: 17px;
     color: var(--text-muted);
     margin-top: 3px;
 }
@@ -65,14 +65,14 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 50px;
-    padding: 10px 18px; /* was 8px 16px */
-    font-size: 16px; /* was 14px */
+    padding: 10px 18px;
+    font-size: 16px;
     color: var(--text-mid);
     font-weight: 500;
     box-shadow: var(--shadow-sm);
     white-space: nowrap;
 }
-.date-chip svg { width: 17px; height: 17px; color: var(--text-muted); } /* was 15px */
+.date-chip svg { width: 17px; height: 17px; color: var(--text-muted); }
 
 /* ── STAT CARDS ── */
 .stats-grid {
@@ -85,7 +85,7 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 20px 22px; /* was 18px 20px */
+    padding: 20px 22px;
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
@@ -109,21 +109,21 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 .stat-card.blue::after   { background: var(--blue); }
 
 .stat-top { display: flex; align-items: flex-start; justify-content: space-between; }
-.stat-label { font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); } /* was 13px */
+.stat-label { font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); }
 .stat-icon {
-    width: 46px; height: 46px; /* was 40px */
+    width: 46px; height: 46px;
     border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
 }
-.stat-icon svg { width: 22px; height: 22px; } /* was 18px */
+.stat-icon svg { width: 22px; height: 22px; }
 .stat-icon.red    { background: var(--red-light);    color: var(--red); }
 .stat-icon.green  { background: var(--green-light);  color: var(--green); }
 .stat-icon.amber  { background: var(--amber-light);  color: var(--amber); }
 .stat-icon.blue   { background: var(--blue-light);   color: var(--blue); }
 
 .stat-value {
-    font-size: 36px; /* was 30px */
+    font-size: 36px;
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.8px;
@@ -131,14 +131,14 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     font-variant-numeric: tabular-nums;
 }
 .stat-sub {
-    font-size: 15px; /* was 13px */
+    font-size: 15px;
     color: var(--text-muted);
     display: flex;
     align-items: center;
     gap: 5px;
 }
 .stat-sub.warn { color: var(--amber); font-weight: 600; }
-.stat-sub svg  { width: 15px; height: 15px; } /* was 13px */
+.stat-sub svg  { width: 15px; height: 15px; }
 
 /* ── ALERT BAR ── */
 .alert-bar {
@@ -149,13 +149,13 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     border: 1px solid #fde68a;
     border-left: 4px solid var(--amber);
     border-radius: var(--radius-sm);
-    padding: 16px 20px; /* was 14px 18px */
-    font-size: 17px; /* was 15px */
+    padding: 16px 20px;
+    font-size: 17px;
     color: #78350f;
     margin-bottom: 1.4rem;
     animation: slideIn .3s ease;
 }
-.alert-bar svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--amber); } /* was 19px */
+.alert-bar svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--amber); }
 .alert-bar strong { font-weight: 700; }
 @keyframes slideIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
 
@@ -166,7 +166,6 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     gap: 14px;
     align-items: start;
 }
-@media (max-width: 820px) { .two-col { grid-template-columns: 1fr; } }
 
 /* ── SECTION HEADER ── */
 .section-header {
@@ -176,13 +175,13 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     margin-bottom: 10px;
 }
 .section-title {
-    font-size: 20px; /* was 18px */
+    font-size: 20px;
     font-weight: 700;
     color: var(--red);
     letter-spacing: 0.3px;
 }
 .view-all-link {
-    font-size: 16px; /* was 14px */
+    font-size: 16px;
     font-weight: 500;
     color: var(--blue);
     text-decoration: none;
@@ -192,7 +191,7 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     transition: gap .15s;
 }
 .view-all-link:hover { gap: 6px; }
-.view-all-link svg { width: 16px; height: 16px; } /* was 14px */
+.view-all-link svg { width: 16px; height: 16px; }
 
 /* ── TABLE CARD ── */
 .table-card {
@@ -202,15 +201,24 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
 }
+
+/* ── TABLE SCROLL WRAPPER (mobile) ── */
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .dash-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 16px; /* was 14px */
+    font-size: 16px;
+    min-width: 360px; /* prevents collapse on tiny screens */
 }
 .dash-table thead th {
-    padding: 13px 16px; /* was 11px 15px */
+    padding: 13px 16px;
     text-align: left;
-    font-size: 14px; /* was 12px */
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: .08em;
     color: var(--text-muted);
@@ -225,11 +233,11 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 }
 .dash-table tbody tr:last-child { border-bottom: none; }
 .dash-table tbody tr:hover { background: #fafbfc; }
-.dash-table tbody td { padding: 14px 16px; vertical-align: middle; color: var(--text-mid); } /* was 12px 15px */
+.dash-table tbody td { padding: 14px 16px; vertical-align: middle; color: var(--text-mid); }
 
 /* ── PRODUCT NAME IN TABLE ── */
-.prod-name { font-weight: 500; color: var(--text); font-size: 16px; } /* was 14px */
-.prod-ref  { font-size: 14px; color: var(--text-muted); margin-top: 1px; font-family: var(--font-mono); } /* was 12px */
+.prod-name { font-weight: 500; color: var(--text); font-size: 16px; }
+.prod-ref  { font-size: 14px; color: var(--text-muted); margin-top: 1px; font-family: var(--font-mono); }
 
 /* ── AMOUNT ── */
 .amount { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
@@ -239,15 +247,15 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    font-size: 14px; /* was 12.5px */
+    font-size: 14px;
     font-weight: 600;
-    padding: 5px 12px; /* was 4px 10px */
+    padding: 5px 12px;
     border-radius: 20px;
     white-space: nowrap;
 }
 .badge::before {
     content: '';
-    width: 6px; height: 6px; /* was 5px */
+    width: 6px; height: 6px;
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -260,10 +268,10 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 
 /* ── STOCK BAR ── */
 .stock-cell { display: flex; align-items: center; gap: 8px; }
-.stock-num  { font-weight: 700; font-size: 16px; min-width: 26px; text-align: right; } /* was 14px / 22px */
+.stock-num  { font-weight: 700; font-size: 16px; min-width: 26px; text-align: right; }
 .stock-num.danger { color: var(--red); }
 .stock-num.warn   { color: var(--amber); }
-.stock-bar-wrap { width: 52px; height: 5px; background: #e2e8f0; border-radius: 10px; overflow: hidden; flex-shrink: 0; } /* was 48px / 4px */
+.stock-bar-wrap { width: 52px; height: 5px; background: #e2e8f0; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
 .stock-bar { height: 100%; border-radius: 10px; }
 .stock-bar.red   { background: var(--red); }
 .stock-bar.amber { background: var(--amber); }
@@ -278,20 +286,86 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     gap: 10px;
 }
 .empty-icon {
-    width: 54px; height: 54px; /* was 48px */
+    width: 54px; height: 54px;
     border-radius: 50%;
     background: var(--surface);
     border: 1.5px dashed var(--border-dark);
     display: flex; align-items: center; justify-content: center;
 }
-.empty-icon svg { width: 26px; height: 26px; opacity: .35; } /* was 22px */
-.empty-state p { font-size: 16px; } /* was 14px */
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
+.empty-icon svg { width: 26px; height: 26px; opacity: .35; }
+.empty-state p { font-size: 16px; }
+
+/* ════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════════════════════ */
+
+/* ── Large tablets (≤ 1024px) ── */
+@media (max-width: 1024px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-value { font-size: 30px; }
 }
-@media (max-width: 520px) {
-    .stats-grid { grid-template-columns: 1fr; }
+
+/* ── Tablets / small laptops (≤ 820px) ── */
+@media (max-width: 820px) {
+    .two-col { grid-template-columns: 1fr; }
+}
+
+/* ── Large phones / small tablets (≤ 640px) ── */
+@media (max-width: 640px) {
+    .welcome-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .welcome-title { font-size: 24px; }
+    .welcome-sub   { font-size: 15px; }
+    .date-chip {
+        font-size: 14px;
+        padding: 8px 14px;
+        align-self: flex-start;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 1rem;
+    }
+    .stat-card { padding: 16px; gap: 10px; }
+    .stat-icon { width: 38px; height: 38px; }
+    .stat-icon svg { width: 18px; height: 18px; }
+    .stat-label { font-size: 12px; }
+    .stat-value { font-size: 26px; }
+    .stat-sub   { font-size: 13px; }
+
+    .alert-bar  { font-size: 14px; padding: 12px 14px; }
+    .alert-bar svg { width: 18px; height: 18px; }
+
+    .section-title  { font-size: 17px; }
+    .view-all-link  { font-size: 14px; }
+
+    .dash-table     { font-size: 14px; }
+    .prod-name      { font-size: 14px; }
+    .prod-ref       { font-size: 12px; }
+    .dash-table thead th { font-size: 12px; padding: 11px 12px; }
+    .dash-table tbody td { padding: 12px; }
+    .badge          { font-size: 12px; padding: 4px 9px; }
+    .stock-num      { font-size: 14px; }
+    .stock-bar-wrap { width: 40px; }
+}
+
+/* ── Phones (≤ 420px) ── */
+@media (max-width: 420px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat-card  { padding: 14px 12px; gap: 8px; }
+    .stat-value { font-size: 22px; }
+    .stat-label { font-size: 11px; letter-spacing: .04em; }
+    .stat-sub   { font-size: 12px; }
+    .stat-icon  { width: 34px; height: 34px; border-radius: 8px; }
+    .stat-icon svg { width: 16px; height: 16px; }
+
+    .welcome-title { font-size: 21px; }
+    .date-chip { font-size: 13px; }
 }
 </style>
 @endpush
@@ -357,7 +431,7 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     {{-- Low Stock --}}
     <div class="stat-card amber">
         <div class="stat-top">
-            <div class="stat-label">Low Stock</div>     
+            <div class="stat-label">Low Stock</div>
             <div class="stat-icon amber">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
@@ -424,48 +498,50 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
             </a>
         </div>
         <div class="table-card">
-            <table class="dash-table">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Qty</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($recentSales as $sale)
-                        @foreach($sale->items as $item)
+            <div class="table-scroll">
+                <table class="dash-table">
+                    <thead>
                         <tr>
-                            <td>
-                                <div class="prod-name">{{ $item->product->name ?? 'N/A' }}</div>
-                                <div class="prod-ref">{{ $sale->reference_no }}</div>
-                            </td>
-                            <td style="font-weight:600;color:var(--text)">{{ $item->quantity }}</td>
-                            <td class="amount">₱{{ number_format($sale->total_amount, 2) }}</td>
-                            <td>
-                                <span class="badge {{ $sale->status === 'Paid' || strtolower($sale->status) === 'completed' ? 'green' : 'amber' }}">
-                                    {{ $sale->status }}
-                                </span>
-                            </td>
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>Amount</th>
+                            <th>Status</th>
                         </tr>
-                        @endforeach
-                    @empty
-                        <tr>
-                            <td colspan="4">
-                                <div class="empty-state">
-                                    <div class="empty-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                                        </svg>
+                    </thead>
+                    <tbody>
+                        @forelse($recentSales as $sale)
+                            @foreach($sale->items as $item)
+                            <tr>
+                                <td>
+                                    <div class="prod-name">{{ $item->product->name ?? 'N/A' }}</div>
+                                    <div class="prod-ref">{{ $sale->reference_no }}</div>
+                                </td>
+                                <td style="font-weight:600;color:var(--text)">{{ $item->quantity }}</td>
+                                <td class="amount">₱{{ number_format($sale->total_amount, 2) }}</td>
+                                <td>
+                                    <span class="badge {{ $sale->status === 'Paid' || strtolower($sale->status) === 'completed' ? 'green' : 'amber' }}">
+                                        {{ $sale->status }}
+                                    </span>
+                                </td>
+                            </tr>
+                            @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="4">
+                                    <div class="empty-state">
+                                        <div class="empty-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                            </svg>
+                                        </div>
+                                        <p>No sales recorded yet.</p>
                                     </div>
-                                    <p>No sales recorded yet.</p>
-                                </div>
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -481,56 +557,58 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
             </a>
         </div>
         <div class="table-card">
-            <table class="dash-table">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Stock</th>
-                        <th>Min Level</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($lowStockItems as $product)
-                    @php
-                        $pct = $product->min_stock > 0
-                            ? min(100, ($product->stock / ($product->min_stock * 2)) * 100)
-                            : 0;
-                        $barColor  = $product->stock <= 0 ? 'red' : 'amber';
-                        $numColor  = $product->stock <= 0 ? 'danger' : 'warn';
-                    @endphp
-                    <tr>
-                        <td>
-                            <div class="prod-name">{{ $product->name }}</div>
-                            @if($product->brand)
-                                <div class="prod-ref">{{ $product->brand }}</div>
-                            @endif
-                        </td>
-                        <td>
-                            <div class="stock-cell">
-                                <span class="stock-num {{ $numColor }}">{{ $product->stock }}</span>
-                                <div class="stock-bar-wrap">
-                                    <div class="stock-bar {{ $barColor }}" style="width:{{ $pct }}%"></div>
-                                </div>
-                            </div>
-                        </td>
-                        <td style="color:var(--text-muted);font-size:14px;">{{ $product->min_stock }}</td>
-                    </tr>
-                    @empty
+            <div class="table-scroll">
+                <table class="dash-table">
+                    <thead>
                         <tr>
-                            <td colspan="3">
-                                <div class="empty-state">
-                                    <div class="empty-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                            <polyline points="20 6 9 17 4 12"/>
-                                        </svg>
+                            <th>Product</th>
+                            <th>Stock</th>
+                            <th>Min Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($lowStockItems as $product)
+                        @php
+                            $pct = $product->min_stock > 0
+                                ? min(100, ($product->stock / ($product->min_stock * 2)) * 100)
+                                : 0;
+                            $barColor  = $product->stock <= 0 ? 'red' : 'amber';
+                            $numColor  = $product->stock <= 0 ? 'danger' : 'warn';
+                        @endphp
+                        <tr>
+                            <td>
+                                <div class="prod-name">{{ $product->name }}</div>
+                                @if($product->brand)
+                                    <div class="prod-ref">{{ $product->brand }}</div>
+                                @endif
+                            </td>
+                            <td>
+                                <div class="stock-cell">
+                                    <span class="stock-num {{ $numColor }}">{{ $product->stock }}</span>
+                                    <div class="stock-bar-wrap">
+                                        <div class="stock-bar {{ $barColor }}" style="width:{{ $pct }}%"></div>
                                     </div>
-                                    <p>All stock levels are good!</p>
                                 </div>
                             </td>
+                            <td style="color:var(--text-muted);font-size:14px;">{{ $product->min_stock }}</td>
                         </tr>
-                    @endforelse
-                </tbody>
-            </table>
+                        @empty
+                            <tr>
+                                <td colspan="3">
+                                    <div class="empty-state">
+                                        <div class="empty-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <polyline points="20 6 9 17 4 12"/>
+                                            </svg>
+                                        </div>
+                                        <p>All stock levels are good!</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

@@ -15,8 +15,33 @@
   }
   body { font-family: 'Barlow', sans-serif; background: var(--gray-lighter); color: var(--black); min-height: 100vh; display: flex; }
 
-  /* SIDEBAR */
-  .sidebar { width: var(--sidebar-w); background: var(--black); min-height: 100vh; display: flex; flex-direction: column; flex-shrink: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  /* ── OVERLAY (mobile) ── */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .sidebar-overlay.open { opacity: 1; }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: var(--sidebar-w);
+    background: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    transition: transform 0.25s ease;
+  }
   .sidebar-logo { padding: 1.6rem 1.4rem 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .sidebar-logo .brand { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 0.08em; color: var(--white); line-height: 1; }
   .sidebar-logo .brand span { color: var(--red); }
@@ -38,41 +63,64 @@
   .logout-btn:hover { opacity: 0.8; }
   .logout-btn svg { width: 18px; height: 18px; stroke: #fff; }
 
-  /* MAIN */
+  /* ── MAIN ── */
   .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+  /* ── TOPBAR ── */
   .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 1.8rem; height: 60px; display: flex; align-items: center; gap: 1rem; position: sticky; top: 0; z-index: 10; }
   .topbar-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--black); }
   .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
-  .topbar-date { font-size: 0.92rem; color: var(--gray-mid); }
+  .topbar-date { font-size: 0.92rem; color: var(--gray-mid); white-space: nowrap; }
+
+  /* Hamburger button — hidden on desktop */
+  .hamburger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 38px; height: 38px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 6px;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .hamburger:hover { background: var(--gray-light); }
+  .hamburger svg { width: 22px; height: 22px; stroke: var(--black); }
+
   .search-box { display: flex; align-items: center; background: var(--gray-light); border: 1px solid var(--border); border-radius: 6px; padding: 0 12px; gap: 7px; height: 38px; }
   .search-box svg { width: 16px; height: 16px; stroke: #999; flex-shrink: 0; }
   .search-box input { border: none; background: none; outline: none; font-family: 'Barlow', sans-serif; font-size: 0.95rem; width: 170px; color: var(--black); }
   .content { padding: 1.8rem; flex: 1; }
 
-  /* CARDS & TABLES */
+  /* ── CARDS & TABLES ── */
   .card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem; }
 
-  table { width: 100%; border-collapse: collapse; font-size: 1rem; }
-  thead th { background: var(--gray-light); padding: 0.78rem 1rem; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-mid); font-weight: 600; border-bottom: 1px solid var(--border); }
+  /* Table scroll wrapper */
+  .table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 1rem; min-width: 480px; }
+  thead th { background: var(--gray-light); padding: 0.78rem 1rem; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-mid); font-weight: 600; border-bottom: 1px solid var(--border); white-space: nowrap; }
   tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
   tbody tr:last-child { border-bottom: none; }
   tbody tr:hover { background: var(--gray-lighter); }
   tbody td { padding: 0.85rem 1rem; color: var(--gray-dark); vertical-align: middle; }
 
-  /* BADGES */
+  /* ── BADGES ── */
   .badge { display: inline-block; font-size: 0.82rem; font-weight: 600; padding: 3px 11px; border-radius: 20px; }
   .badge.green { background: #dcfce7; color: #15803d; }
   .badge.amber { background: #fef9c3; color: #a16207; }
   .badge.red { background: var(--red-light); color: var(--red-dark); }
   .badge.blue { background: #dbeafe; color: #1d4ed8; }
 
-  /* BUTTONS */
+  /* ── BUTTONS ── */
   .btn-sm { font-family: 'Barlow', sans-serif; font-size: 0.92rem; font-weight: 600; padding: 8px 18px; border-radius: 6px; border: 1.5px solid var(--red); background: var(--white); color: var(--red); cursor: pointer; transition: all 0.15s; }
   .btn-sm:hover { background: var(--red); color: #fff; }
   .btn-sm.solid { background: var(--red); color: #fff; }
   .btn-sm.solid:hover { background: var(--red-dark); }
 
-  /* FORMS */
+  /* ── FORMS ── */
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.3rem; }
   .form-group { display: flex; flex-direction: column; gap: 5px; }
   .form-group.full { grid-column: 1 / -1; }
@@ -84,7 +132,7 @@
   .form-group select:focus,
   .form-group textarea:focus { border-color: var(--red); background: var(--white); box-shadow: 0 0 0 3px rgba(208,18,18,0.09); }
 
-  /* STAT CARDS */
+  /* ── STAT CARDS ── */
   .stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 1.8rem; }
   .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.3rem; border-top: 3px solid var(--border); }
   .stat-card.red { border-top-color: var(--red); }
@@ -97,23 +145,76 @@
   .stat-sub.up { color: #16a34a; }
   .stat-sub.down { color: var(--red); }
 
-  /* SECTION HEADERS */
+  /* ── SECTION HEADERS ── */
   .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
   .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--black); }
 
-  /* TWO COL */
+  /* ── TWO COL ── */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
 
-  /* ALERT */
+  /* ── ALERT ── */
   .alert-bar { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 0.9rem 1.1rem; display: flex; align-items: center; gap: 10px; margin-bottom: 1.4rem; font-size: 1rem; color: #92400e; }
   .alert-bar svg { width: 20px; height: 20px; stroke: #f59e0b; flex-shrink: 0; }
 
-  @media (max-width: 900px) {
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .two-col { grid-template-columns: 1fr; }
+  /* ════════════════════════════════════════
+     RESPONSIVE BREAKPOINTS
+     ════════════════════════════════════════ */
+
+  /* ── Tablets (≤ 1024px) ── */
+  @media (max-width: 1024px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .topbar-date { display: none; }
+    .search-box input { width: 130px; }
   }
-  @media (max-width: 640px) {
-    .stats-grid { grid-template-columns: 1fr; }
+
+  /* ── Tablets / small laptops (≤ 820px) ── */
+  @media (max-width: 820px) {
+    .two-col { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+  }
+
+  /* ── Mobile (≤ 700px) — sidebar goes off-canvas ── */
+  @media (max-width: 700px) {
+    body { display: block; } /* stack instead of flex so sidebar overlays */
+
+    .sidebar-overlay { display: block; pointer-events: none; }
+    .sidebar-overlay.open { pointer-events: auto; }
+
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      transform: translateX(-100%);
+      height: 100vh;
+      min-height: unset;
+    }
+    .sidebar.open { transform: translateX(0); }
+
+    .main { min-height: 100vh; }
+
+    .topbar { padding: 0 1rem; gap: 0.6rem; }
+    .hamburger { display: flex; }
+    .topbar-title { font-size: 1.2rem; }
+    .search-box { display: none; } /* hide search on mobile — can show via icon if needed */
+
+    .content { padding: 1rem; }
+
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.2rem; }
+    .stat-card { padding: 1rem; }
+    .stat-value { font-size: 1.9rem; }
+    .stat-label { font-size: 0.78rem; }
+    .stat-sub { font-size: 0.82rem; }
+
+    .alert-bar { font-size: 0.9rem; padding: 0.75rem 0.9rem; }
+  }
+
+  /* ── Small phones (≤ 420px) ── */
+  @media (max-width: 420px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat-card { padding: 0.85rem 0.9rem; }
+    .stat-value { font-size: 1.65rem; }
+    .stat-label { font-size: 0.72rem; letter-spacing: 0.06em; }
+    .topbar-title { font-size: 1.1rem; }
   }
 </style>
 
@@ -121,8 +222,11 @@
 </head>
 <body>
 
+<!-- OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
 <!-- SIDEBAR -->
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
   <div class="sidebar-logo">
     <div class="brand"><span>AC</span> Paint Center</div>
     <div class="sub">Inventory System</div>
@@ -193,7 +297,6 @@
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
         </button>
       </form>
-
     </div>
   </div>
 </aside>
@@ -201,7 +304,17 @@
 <!-- MAIN -->
 <div class="main">
   <div class="topbar">
+    <!-- Hamburger — visible on mobile only -->
+    <button class="hamburger" id="hamburgerBtn" onclick="openSidebar()" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6"  x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
     <span class="topbar-title">@yield('title', 'Dashboard')</span>
+
     <div class="topbar-right">
       <div class="search-box">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -217,8 +330,36 @@
 </div>
 
 <script>
+  // Date
   const d = new Date();
   document.getElementById('topbar-date').textContent = d.toLocaleDateString('en-PH', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+
+  // Sidebar toggle
+  const sidebar  = document.getElementById('sidebar');
+  const overlay  = document.getElementById('sidebarOverlay');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close sidebar when a nav link is tapped on mobile
+  document.querySelectorAll('.nav-item').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 700) closeSidebar();
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSidebar();
+  });
 </script>
 @stack('scripts')
 </body>

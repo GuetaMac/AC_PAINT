@@ -36,7 +36,6 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-
 body { font-family: var(--font); background: var(--surface); color: var(--text); }
 
 /* ── SWEETALERT2 OVERRIDES ──────────────────────────────── */
@@ -47,45 +46,12 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     box-shadow: var(--shadow-lg) !important;
     padding: 2rem 2.25rem !important;
 }
-.swal2-title {
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    color: var(--text) !important;
-    letter-spacing: -0.2px !important;
-}
-.swal2-html-container {
-    font-size: 14.5px !important;
-    color: var(--text-mid) !important;
-    line-height: 1.6 !important;
-}
-.swal2-confirm {
-    font-family: var(--font) !important;
-    font-size: 14.5px !important;
-    font-weight: 600 !important;
-    border-radius: 10px !important;
-    padding: 10px 24px !important;
-    box-shadow: none !important;
-    letter-spacing: 0.01em !important;
-}
-.swal2-cancel {
-    font-family: var(--font) !important;
-    font-size: 14.5px !important;
-    font-weight: 500 !important;
-    border-radius: 10px !important;
-    padding: 10px 24px !important;
-    box-shadow: none !important;
-}
-.swal2-icon {
-    border-width: 2px !important;
-    margin-bottom: 1rem !important;
-}
-/* Toast style */
-.swal2-toast-custom {
-    font-family: var(--font) !important;
-}
-.swal2-toast .swal2-title {
-    font-size: 14.5px !important;
-}
+.swal2-title { font-size: 18px !important; font-weight: 600 !important; color: var(--text) !important; letter-spacing: -0.2px !important; }
+.swal2-html-container { font-size: 14.5px !important; color: var(--text-mid) !important; line-height: 1.6 !important; }
+.swal2-confirm { font-family: var(--font) !important; font-size: 14.5px !important; font-weight: 600 !important; border-radius: 10px !important; padding: 10px 24px !important; box-shadow: none !important; letter-spacing: 0.01em !important; }
+.swal2-cancel { font-family: var(--font) !important; font-size: 14.5px !important; font-weight: 500 !important; border-radius: 10px !important; padding: 10px 24px !important; box-shadow: none !important; }
+.swal2-icon { border-width: 2px !important; margin-bottom: 1rem !important; }
+.swal2-toast .swal2-title { font-size: 14.5px !important; }
 
 /* ── PAGE HEADER ────────────────────────────────────────── */
 .page-header {
@@ -94,14 +60,10 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     justify-content: space-between;
     margin-bottom: 1.5rem;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 .page-header-left { display: flex; flex-direction: column; gap: 3px; }
-.page-title {
-    font-size: 26px;
-    font-weight: 600;
-    color: var(--text);
-    letter-spacing: -0.3px;
-}
+.page-title { font-size: 26px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; }
 .page-sub { font-size: 15px; color: var(--text-muted); }
 .ref-badge {
     display: flex;
@@ -114,19 +76,16 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     font-size: 13.5px;
     color: var(--text-mid);
     box-shadow: var(--shadow-sm);
+    white-space: nowrap;
 }
-.ref-badge strong {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--text);
-    letter-spacing: 0.04em;
-}
+.ref-badge strong { font-family: var(--font-mono); font-size: 14px; color: var(--text); letter-spacing: 0.04em; }
 .ref-dot {
     width: 7px; height: 7px;
     border-radius: 50%;
     background: var(--green);
     box-shadow: 0 0 0 2px var(--green-light);
     animation: pulse 2s infinite;
+    flex-shrink: 0;
 }
 @keyframes pulse {
     0%, 100% { box-shadow: 0 0 0 2px var(--green-light); }
@@ -163,13 +122,7 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 .stat-icon.indigo { background: #eef2ff; color: #6366f1; }
 .stat-icon.green  { background: var(--green-light); color: var(--green); }
 .stat-info { min-width: 0; }
-.stat-val {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.1;
-    font-variant-numeric: tabular-nums;
-}
+.stat-val { font-size: 22px; font-weight: 600; color: var(--text); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .stat-val.green { color: var(--green); }
 .stat-val.red   { color: var(--red); }
 .stat-lbl { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
@@ -181,7 +134,6 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     gap: 14px;
     align-items: start;
 }
-@media (max-width: 780px) { .two-col { grid-template-columns: 1fr; } }
 
 /* ── CARD ────────────────────────────────────────────────── */
 .card {
@@ -200,12 +152,7 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     border-bottom: 1px solid var(--border);
     background: #fdfdfd;
 }
-.card-head-icon {
-    width: 30px; height: 30px;
-    border-radius: 7px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-}
+.card-head-icon { width: 30px; height: 30px; border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .card-head-icon svg { width: 15px; height: 15px; }
 .card-head-icon.blue   { background: #eff6ff; color: #3b82f6; }
 .card-head-icon.violet { background: #f5f3ff; color: #7c3aed; }
@@ -214,10 +161,7 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 .card-body { padding: 18px 20px; }
 
 /* ── SEARCH ──────────────────────────────────────────────── */
-.search-wrap {
-    position: relative;
-    margin-bottom: 10px;
-}
+.search-wrap { position: relative; margin-bottom: 10px; }
 .search-wrap input {
     width: 100%;
     padding: 11px 16px 11px 44px;
@@ -230,20 +174,9 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
     outline: none;
     transition: border-color .2s, box-shadow .2s;
 }
-.search-wrap input:focus {
-    border-color: var(--accent);
-    background: var(--card);
-    box-shadow: 0 0 0 3px rgba(14,165,233,0.10);
-}
+.search-wrap input:focus { border-color: var(--accent); background: var(--card); box-shadow: 0 0 0 3px rgba(14,165,233,0.10); }
 .search-wrap input::placeholder { color: var(--text-muted); }
-.search-ico {
-    position: absolute;
-    left: 14px; top: 50%;
-    transform: translateY(-50%);
-    width: 17px; height: 17px;
-    color: var(--text-muted);
-    pointer-events: none;
-}
+.search-ico { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; color: var(--text-muted); pointer-events: none; }
 
 /* ── RESULTS LIST ────────────────────────────────────────── */
 .results-list {
@@ -257,7 +190,6 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 .results-list::-webkit-scrollbar { width: 4px; }
 .results-list::-webkit-scrollbar-track { background: transparent; }
 .results-list::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 4px; }
-
 .result-item {
     display: flex;
     align-items: center;
@@ -273,28 +205,15 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 .ri-name { font-size: 14.5px; font-weight: 500; color: var(--text); }
 .ri-meta { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
 .ri-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.stock-badge {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 3px 9px;
-    border-radius: 20px;
-    white-space: nowrap;
-}
+.stock-badge { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
 .stock-badge.ok  { background: var(--green-light); color: var(--green); }
 .stock-badge.low { background: var(--amber-light); color: var(--amber); }
 .stock-badge.out { background: var(--red-light);   color: var(--red); }
 .add-btn {
-    font-size: 13px;
-    font-family: var(--font);
-    font-weight: 600;
-    padding: 6px 14px;
-    border: 1.5px solid var(--border-dark);
-    border-radius: 7px;
-    background: var(--card);
-    color: var(--text);
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all .15s;
+    font-size: 13px; font-family: var(--font); font-weight: 600;
+    padding: 6px 14px; border: 1.5px solid var(--border-dark);
+    border-radius: 7px; background: var(--card); color: var(--text);
+    cursor: pointer; white-space: nowrap; transition: all .15s;
 }
 .add-btn:hover:not(:disabled) { background: var(--text); color: var(--card); border-color: var(--text); }
 .add-btn:disabled { opacity: .35; cursor: not-allowed; }
@@ -303,81 +222,39 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 /* ── FORM FIELDS ─────────────────────────────────────────── */
 .form-field { margin-bottom: 16px; }
 .form-field:last-child { margin-bottom: 0; }
-.form-field label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-mid);
-    margin-bottom: 7px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-}
+.form-field label { display: block; font-size: 13px; font-weight: 600; color: var(--text-mid); margin-bottom: 7px; letter-spacing: 0.03em; text-transform: uppercase; }
 .form-field .opt { color: var(--text-muted); font-weight: 400; text-transform: none; font-size: 12px; }
 .form-field input {
-    width: 100%;
-    padding: 10px 14px;
-    font-size: 15px;
-    font-family: var(--font);
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    background: var(--surface);
-    color: var(--text);
-    outline: none;
+    width: 100%; padding: 10px 14px; font-size: 15px; font-family: var(--font);
+    border: 1.5px solid var(--border); border-radius: 10px;
+    background: var(--surface); color: var(--text); outline: none;
     transition: border-color .2s, box-shadow .2s;
 }
-.form-field input:focus {
-    border-color: var(--accent);
-    background: var(--card);
-    box-shadow: 0 0 0 3px rgba(14,165,233,0.10);
-}
+.form-field input:focus { border-color: var(--accent); background: var(--card); box-shadow: 0 0 0 3px rgba(14,165,233,0.10); }
 .form-field input::placeholder { color: var(--text-muted); }
 
 /* ── PAYMENT TOGGLE ──────────────────────────────────────── */
-.pay-toggle {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-}
+.pay-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .pay-opt {
-    padding: 12px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    background: var(--surface);
-    cursor: pointer;
-    font-size: 14.5px;
-    font-family: var(--font);
-    font-weight: 500;
-    color: var(--text-mid);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    transition: all .18s;
+    padding: 12px; border: 1.5px solid var(--border);
+    border-radius: 10px; background: var(--surface); cursor: pointer;
+    font-size: 14.5px; font-family: var(--font); font-weight: 500;
+    color: var(--text-mid); display: flex; align-items: center;
+    justify-content: center; gap: 7px; transition: all .18s;
 }
 .pay-opt:hover { border-color: var(--border-dark); background: var(--card); color: var(--text); }
-.pay-opt.active {
-    border-color: var(--green);
-    background: var(--green-light);
-    color: var(--green-dark);
-    box-shadow: 0 0 0 3px rgba(22,163,74,0.10);
-}
+.pay-opt.active { border-color: var(--green); background: var(--green-light); color: var(--green-dark); box-shadow: 0 0 0 3px rgba(22,163,74,0.10); }
 .pay-opt svg { width: 17px; height: 17px; }
 
 /* ── CART EMPTY ──────────────────────────────────────────── */
 .cart-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2.5rem 1.5rem;
-    color: var(--text-muted);
-    gap: 12px;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 2.5rem 1.5rem;
+    color: var(--text-muted); gap: 12px;
 }
 .cart-empty-icon {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 1.5px dashed var(--border-dark);
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--surface); border: 1.5px dashed var(--border-dark);
     display: flex; align-items: center; justify-content: center;
 }
 .cart-empty-icon svg { width: 24px; height: 24px; opacity: .4; }
@@ -385,140 +262,119 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
 .cart-empty strong { display: block; font-size: 15px; color: var(--text-mid); margin-bottom: 4px; }
 
 /* ── CART TABLE ──────────────────────────────────────────── */
-.cart-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-}
-.cart-table th {
-    padding: 9px 11px;
-    color: var(--text-muted);
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    border-bottom: 1px solid var(--border);
-    text-align: left;
-}
-.cart-table td {
-    padding: 11px 11px;
-    border-bottom: 1px solid #f1f5f9;
-    vertical-align: middle;
-}
+.cart-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.cart-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 340px; }
+.cart-table th { padding: 9px 11px; color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+.cart-table td { padding: 11px 11px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
 .cart-table tr:last-child td { border-bottom: none; }
 .cart-table tr:hover td { background: #fafbfc; }
-
 .item-name { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; }
 .item-price { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
 
 /* ── QTY CONTROL ─────────────────────────────────────────── */
 .qty-ctrl { display: flex; align-items: center; gap: 6px; }
 .qty-btn {
-    width: 29px; height: 29px;
-    border: 1.5px solid var(--border-dark);
-    border-radius: 7px;
-    background: var(--card);
-    cursor: pointer;
-    font-size: 15px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--text-mid);
-    transition: all .15s;
-    line-height: 1;
-    font-family: var(--font);
+    width: 29px; height: 29px; border: 1.5px solid var(--border-dark);
+    border-radius: 7px; background: var(--card); cursor: pointer;
+    font-size: 15px; display: flex; align-items: center; justify-content: center;
+    color: var(--text-mid); transition: all .15s; line-height: 1; font-family: var(--font);
 }
 .qty-btn:hover { background: var(--text); color: var(--card); border-color: var(--text); }
 .qty-val { min-width: 26px; text-align: center; font-weight: 600; font-size: 15px; color: var(--text); }
-
 .remove-btn {
-    width: 29px; height: 29px;
-    border: 1.5px solid #fca5a5;
-    border-radius: 7px;
-    background: var(--card);
-    cursor: pointer;
-    font-size: 16px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--red);
-    transition: all .15s;
-    line-height: 1;
+    width: 29px; height: 29px; border: 1.5px solid #fca5a5;
+    border-radius: 7px; background: var(--card); cursor: pointer;
+    font-size: 16px; display: flex; align-items: center; justify-content: center;
+    color: var(--red); transition: all .15s; line-height: 1;
 }
 .remove-btn:hover { background: var(--red); color: var(--card); border-color: var(--red); }
-
-.amount-cell {
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--text);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-}
+.amount-cell { font-weight: 600; font-size: 15px; color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ── ORDER SUMMARY ───────────────────────────────────────── */
-.order-summary {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-top: 14px;
-}
-.sum-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
-    font-size: 14.5px;
-    color: var(--text-mid);
-}
-.sum-row.total {
-    font-weight: 700;
-    font-size: 19px;
-    color: var(--text);
-    border-top: 1.5px solid var(--border-dark);
-    padding-top: 11px;
-    margin-top: 6px;
-}
+.order-summary { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-top: 14px; }
+.sum-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; font-size: 14.5px; color: var(--text-mid); }
+.sum-row.total { font-weight: 700; font-size: 19px; color: var(--text); border-top: 1.5px solid var(--border-dark); padding-top: 11px; margin-top: 6px; }
 .sum-row.total span:last-child { color: var(--green); }
 
 /* ── CONFIRM BUTTON ──────────────────────────────────────── */
 .confirm-btn {
-    width: 100%;
-    margin-top: 14px;
-    padding: 14px;
-    background: var(--green);
-    color: #fff;
-    border: none;
-    border-radius: 11px;
-    font-size: 16px;
-    font-family: var(--font);
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all .2s;
-    letter-spacing: 0.01em;
+    width: 100%; margin-top: 14px; padding: 14px;
+    background: var(--green); color: #fff; border: none;
+    border-radius: 11px; font-size: 16px; font-family: var(--font);
+    font-weight: 600; cursor: pointer; display: flex;
+    align-items: center; justify-content: center;
+    gap: 8px; transition: all .2s; letter-spacing: 0.01em;
     box-shadow: 0 2px 8px rgba(22,163,74,0.25);
 }
 .confirm-btn svg { width: 19px; height: 19px; }
-.confirm-btn:hover:not(:disabled) {
-    background: #15803d;
-    box-shadow: 0 4px 16px rgba(22,163,74,0.35);
-    transform: translateY(-1px);
-}
+.confirm-btn:hover:not(:disabled) { background: #15803d; box-shadow: 0 4px 16px rgba(22,163,74,0.35); transform: translateY(-1px); }
 .confirm-btn:active:not(:disabled) { transform: translateY(0); }
-.confirm-btn:disabled {
-    background: #e2e8f0;
-    color: #94a3b8;
-    cursor: not-allowed;
-    box-shadow: none;
-}
+.confirm-btn:disabled { background: #e2e8f0; color: #94a3b8; cursor: not-allowed; box-shadow: none; }
 
 /* ── DIVIDER ─────────────────────────────────────────────── */
 .divider { height: 1px; background: var(--border); margin: 14px 0; }
 
-/* ── RESPONSIVE ──────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════════════════════ */
+
+/* ── Tablets (≤ 900px) ── */
+@media (max-width: 900px) {
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Two-col collapse (≤ 780px) ── */
+@media (max-width: 780px) {
+    .two-col { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Mobile (≤ 600px) ── */
 @media (max-width: 600px) {
+    .page-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.1rem; }
+    .page-title { font-size: 22px; }
+    .page-sub   { font-size: 14px; }
+    .ref-badge  { font-size: 12px; padding: 7px 14px; align-self: flex-start; }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 1.1rem;
+    }
+    /* Third stat card goes full-width */
+    .stats-grid .stat-card:nth-child(3) { grid-column: 1 / -1; }
+    .stat-card  { padding: 14px 16px; gap: 10px; }
+    .stat-icon  { width: 38px; height: 38px; }
+    .stat-icon svg { width: 17px; height: 17px; }
+    .stat-val   { font-size: 19px; }
+    .stat-lbl   { font-size: 12px; }
+
+    .card-body  { padding: 14px 16px; }
+    .card-head  { padding: 13px 16px; }
+
+    .result-item { flex-wrap: wrap; gap: 8px; }
+    .ri-right    { width: 100%; justify-content: flex-end; }
+
+    .pay-opt    { font-size: 13.5px; padding: 10px 8px; gap: 5px; }
+
+    .cart-empty { padding: 2rem 1rem; }
+
+    .confirm-btn { font-size: 15px; padding: 13px; }
+}
+
+/* ── Small phones (≤ 420px) ── */
+@media (max-width: 420px) {
     .stats-grid { grid-template-columns: 1fr; }
-    .stat-card { padding: 14px 16px; }
+    .stats-grid .stat-card:nth-child(3) { grid-column: auto; }
+    .stat-card { padding: 12px 14px; }
+    .stat-val  { font-size: 18px; }
+
+    .page-title { font-size: 20px; }
+    .card-body  { padding: 12px 14px; }
+
+    .qty-btn   { width: 26px; height: 26px; font-size: 14px; }
+    .qty-val   { font-size: 14px; }
+    .remove-btn { width: 26px; height: 26px; }
 }
 </style>
 @endpush
@@ -617,7 +473,6 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
                     <label>Customer Name <span class="opt">(optional)</span></label>
                     <input type="text" id="cust-name" placeholder="Walk-in customer">
                 </div>
-
                 <div class="form-field">
                     <label>Payment Method</label>
                     <div class="pay-toggle">
@@ -635,7 +490,6 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
                         </button>
                     </div>
                 </div>
-
                 <div class="form-field" id="cash-row">
                     <label>Amount Tendered</label>
                     <input type="number" id="cash-input" placeholder="0.00" min="0"
@@ -670,23 +524,25 @@ body { font-family: var(--font); background: var(--surface); color: var(--text);
                     </div>
                     <div>
                         <strong>Your cart is empty</strong>
-                        Search for products on the left and click Add to get started.
+                        Search for products above and click Add to get started.
                     </div>
                 </div>
 
                 {{-- Cart Items --}}
                 <div id="cart-wrap" style="display:none">
-                    <table class="cart-table">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Qty</th>
-                                <th>Amount</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody id="cart-body"></tbody>
-                    </table>
+                    <div class="cart-scroll">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Qty</th>
+                                    <th>Amount</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-body"></tbody>
+                        </table>
+                    </div>
 
                     <div class="order-summary">
                         <div class="sum-row">
@@ -731,7 +587,7 @@ let cart          = [];
 let paymentMethod = 'Cash';
 let searchTimer;
 
-/* ── SweetAlert2 Toast (top-right, non-blocking) ── */
+/* ── SweetAlert2 Toast ── */
 const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -767,8 +623,8 @@ function renderResults(products, box) {
     box.innerHTML = products.map(p => {
         const inCart = cart.find(c => c.id === p.id);
         let stockClass = 'ok', stockLabel = `${p.stock} in stock`;
-        if (p.stock <= 0)        { stockClass = 'out'; stockLabel = 'Out of stock'; }
-        else if (p.stock <= 5)   { stockClass = 'low'; stockLabel = `Low: ${p.stock}`; }
+        if (p.stock <= 0)      { stockClass = 'out'; stockLabel = 'Out of stock'; }
+        else if (p.stock <= 5) { stockClass = 'low'; stockLabel = `Low: ${p.stock}`; }
 
         return `<div class="result-item" onclick="addToCart(${p.id},'${escHtml(p.name)}',${p.price},${p.stock})">
             <div style="min-width:0;flex:1">
@@ -791,28 +647,18 @@ function renderResults(products, box) {
 /* ── Cart operations ── */
 function addToCart(id, name, price, maxQty) {
     if (maxQty <= 0) return;
-
     const existing = cart.find(c => c.id === id);
 
     if (existing) {
         if (existing.qty >= maxQty) {
-            Toast.fire({
-                icon: 'warning',
-                title: `Max stock reached for <strong>${name}</strong>`
-            });
+            Toast.fire({ icon: 'warning', title: `Max stock reached for <strong>${name}</strong>` });
             return;
         }
         existing.qty++;
-        Toast.fire({
-            icon: 'success',
-            title: `Added another <strong>${name}</strong>`
-        });
+        Toast.fire({ icon: 'success', title: `Added another <strong>${name}</strong>` });
     } else {
         cart.push({ id, name, price, qty: 1, maxQty });
-        Toast.fire({
-            icon: 'success',
-            title: `<strong>${name}</strong> added to cart`
-        });
+        Toast.fire({ icon: 'success', title: `<strong>${name}</strong> added to cart` });
     }
 
     renderCart();
@@ -833,19 +679,13 @@ function removeFromCart(id) {
         cancelButtonText: 'Cancel',
         confirmButtonColor: '#dc2626',
         cancelButtonColor: '#e2e8f0',
-        customClass: {
-            cancelButton: 'swal-cancel-dark'
-        },
         reverseButtons: true,
         focusCancel: true,
     }).then((result) => {
         if (result.isConfirmed) {
             cart = cart.filter(c => c.id !== id);
             renderCart();
-            Toast.fire({
-                icon: 'info',
-                title: `<strong>${escHtml(item.name)}</strong> removed`
-            });
+            Toast.fire({ icon: 'info', title: `<strong>${escHtml(item.name)}</strong> removed` });
         }
     });
 }
@@ -855,15 +695,9 @@ function changeQty(id, delta) {
     if (!item) return;
     const newQty = item.qty + delta;
 
-    if (newQty < 1) {
-        removeFromCart(id);
-        return;
-    }
+    if (newQty < 1) { removeFromCart(id); return; }
     if (newQty > item.maxQty) {
-        Toast.fire({
-            icon: 'warning',
-            title: `Only <strong>${item.maxQty}</strong> in stock`
-        });
+        Toast.fire({ icon: 'warning', title: `Only <strong>${item.maxQty}</strong> in stock` });
         return;
     }
 
@@ -955,20 +789,17 @@ async function confirmSale() {
     const tendered = parseFloat(document.getElementById('cash-input').value) || 0;
     const customer = document.getElementById('cust-name').value || 'Walk-in';
 
-    // Cash validation before confirmation dialog
     if (paymentMethod === 'Cash' && tendered < total) {
         Swal.fire({
             icon: 'warning',
             title: 'Insufficient Amount',
-            html: `The amount tendered (<strong>₱${numFmt(tendered)}</strong>) is less than the total (<strong>₱${numFmt(total)}</strong>).
-                   <br><br>Please enter the correct amount.`,
+            html: `The amount tendered (<strong>₱${numFmt(tendered)}</strong>) is less than the total (<strong>₱${numFmt(total)}</strong>).<br><br>Please enter the correct amount.`,
             confirmButtonText: 'Got it',
             confirmButtonColor: '#d97706',
         });
         return;
     }
 
-    // Build items summary for confirmation
     const itemLines = cart.map(c =>
         `<tr>
             <td style="padding:4px 8px;text-align:left">${escHtml(c.name)}</td>
@@ -1024,7 +855,6 @@ async function confirmSale() {
 
     if (!isConfirmed) return;
 
-    // Show loading state
     const btn = document.getElementById('confirm-btn');
     btn.disabled  = true;
     btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:19px;height:19px;animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Processing…`;
@@ -1131,7 +961,6 @@ function escHtml(str) {
 
 <style>
 @keyframes spin { to { transform: rotate(360deg); } }
-/* Fix SweetAlert cancel button text color */
 .swal2-cancel { color: #374151 !important; }
 </style>
 @endpush
